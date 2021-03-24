@@ -1,10 +1,11 @@
 /*eslint-disable no-unused-vars */
 import React, { Component, PropTypes } from "react";
 
-const Counter = ({ value, onIncrement, onDecrement, onIncrementAsync }) => (
+const Counter = ({ value, onIncrement, onDecrement, onGetStarWars }) => (
   <div>
     <button onClick={onIncrement}>Increment</button>{" "}
     <button onClick={onDecrement}>Decrement</button>
+    <button onClick={onGetStarWars}>Decrement</button>
     <hr />
     <div>Clicked: {value} times</div>
   </div>

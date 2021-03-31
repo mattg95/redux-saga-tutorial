@@ -1,12 +1,17 @@
-export default function counter(state = 0, action) {
-  console.log(action.type);
+export default function counter(
+  state = { counter: 0, starWars: null },
+  action
+) {
   switch (action.type) {
     case "INCREMENT":
-      return state + 1;
-    case "INCREMENT_IF_ODD":
-      return state % 2 !== 0 ? state + 1 : state;
+      console.log("incrementing");
+      return { ...state, counter: state.counter + 1 };
+    case "GETSTARWARS":
+      console.log(action);
+      return { ...state, starWars: action.data };
     case "DECREMENT":
-      return state - 1;
+      console.log("decrementing");
+      return { ...state, counter: state.counter - 1 };
     default:
       return state;
   }
